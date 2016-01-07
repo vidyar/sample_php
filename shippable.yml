@@ -7,7 +7,7 @@ php:
   - 5.6
 env:
   global:
-   - APP_NAME=shroudd-headland-1758
+   - APP_NAME=phpheroku1
 
   
 before_script: 
