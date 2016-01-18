@@ -19,8 +19,8 @@ before_script:
 script:
   - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/calculator_test.php
    
-after_success :
-  - git push -f git@heroku.com:$APP_NAME.git master
+#after_success :
+  #- git push -f git@heroku.com:$APP_NAME.git master
 
 notifications:
    email: false
