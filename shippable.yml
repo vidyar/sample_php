@@ -17,3 +17,4 @@ notifications:
    email: false
 
       
+cache: true
