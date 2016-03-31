@@ -7,7 +7,9 @@ php:
   - 5.6
   - 7.0
   
-build: 
+build:
+ cache: true
+ 
  ci:
   - mkdir -p shippable/codecoverage
   - mkdir -p shippable/testresults
