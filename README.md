@@ -1,5 +1,6 @@
 Sample PHP
 ===============
+test 
 
 Build sample for standalone PHP build sample.
 
