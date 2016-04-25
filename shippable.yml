@@ -15,7 +15,15 @@ matrix:
 build:
  cache: true
  
+ cache_dir_list:
+    -  /root/.phpenv/versions/$(phpenv version-name)/lib/php/extensions/
+ 
  ci:
+  - echo "extension=intl.so" >> $HOME/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - dirToCache=`ls $HOME/.phpenv/versions/$(phpenv version-name)/lib/php/extensions/ | grep no-debug`
+  - echo $HOME/.phpenv/versions/$(phpenv version-name)/lib/php/extensions/$dirToCache
+  - echo "$dirToCache" >> $HOME/version.txt
+  - cat $HOME/version.txt
   - mkdir -p shippable/codecoverage
   - mkdir -p shippable/testresults
   - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/calculator_test.php
