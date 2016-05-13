@@ -23,3 +23,8 @@ build:
   - mkdir -p shippable/codecoverage
   - mkdir -p shippable/testresults
   - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/calculator_test.php
+ on_success:
+   - >
+      if [ "$IS_GIT_TAG" = "true" ]; then
+        echo "Release as ${GIT_TAG_NAME}."
+      fi;
