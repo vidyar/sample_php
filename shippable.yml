@@ -5,12 +5,7 @@ php:
   - 5.4
   
   
-matrix:
-  include:
-    - php: 5.5
-      env: 
-        - foo=bar
-    - php: 5.6
+
     
 build:
  cache: true
@@ -19,6 +14,7 @@ build:
     -  /root/.phpenv/versions/$(phpenv version-name)/lib/php/extensions/
  
  ci:
+  - echo $IS_GIT_TAG
   - echo "extension=intl.so" >> $HOME/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - dirToCache=`ls $HOME/.phpenv/versions/$(phpenv version-name)/lib/php/extensions/ | grep no-debug`
   - echo $HOME/.phpenv/versions/$(phpenv version-name)/lib/php/extensions/$dirToCache
