@@ -1,6 +1,6 @@
 Sample PHP
 ===============
-test pr
+test pr1
 
 Build sample for standalone PHP build sample.
 
